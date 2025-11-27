@@ -817,6 +817,74 @@
         </a>
     </div>
 
+    <!-- 心理テストモーダル -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-container">
+            <!-- スタート画面 -->
+            <div class="quiz-start" id="quizStart">
+                <div class="quiz-header">
+                    <span class="quiz-badge">＼ 5秒でわかる！あなたのタイプ ／</span>
+                    <h2 class="quiz-title">簡単心理<br>TEST</h2>
+                    <div class="quiz-mascots">
+                        <span class="mascot mascot-blue">🧿</span>
+                        <span class="mascot mascot-purple">👾</span>
+                    </div>
+                </div>
+                <div class="quiz-intro">
+                    <p>8つの質問に答えて<br>あなたにぴったりの部屋を診断！</p>
+                </div>
+                <button class="quiz-start-btn" id="startQuizBtn">診断スタート</button>
+                <button class="quiz-close-btn" id="closeQuizBtn">×</button>
+            </div>
+
+            <!-- 質問画面 -->
+            <div class="quiz-question" id="quizQuestion" style="display: none;">
+                <div class="quiz-progress">
+                    <span id="currentQuestion">1</span> / 8
+                </div>
+                <div class="quiz-question-text" id="questionText"></div>
+                <div class="quiz-answers">
+                    <button class="quiz-answer-btn yes" data-value="yes">
+                        <span class="answer-icon">○</span>
+                        <span class="answer-text">はい</span>
+                    </button>
+                    <button class="quiz-answer-btn no" data-value="no">
+                        <span class="answer-icon">×</span>
+                        <span class="answer-text">いいえ</span>
+                    </button>
+                    <button class="quiz-answer-btn neutral" data-value="neutral">
+                        <span class="answer-icon">△</span>
+                        <span class="answer-text">どちらとも<br>いえない</span>
+                    </button>
+                </div>
+                <button class="quiz-close-btn" id="closeQuizBtn2">×</button>
+            </div>
+
+            <!-- 結果画面 -->
+            <div class="quiz-result" id="quizResult" style="display: none;">
+                <div class="quiz-result-header">
+                    <span class="result-badge">診断結果</span>
+                    <h3 class="result-type" id="resultType"></h3>
+                </div>
+                <div class="result-room">
+                    <div class="result-room-image">
+                        <img id="resultRoomImg" src="" alt="おすすめの部屋">
+                    </div>
+                    <div class="result-room-info">
+                        <h4 id="resultRoomTitle"></h4>
+                        <p id="resultRoomDesc"></p>
+                    </div>
+                </div>
+                <div class="result-type-desc" id="resultTypeDesc"></div>
+                <button class="quiz-result-btn" id="backToLpBtn">
+                    自分の家をさらに想像しよう<br>
+                    <span>詳しく見てみる →</span>
+                </button>
+                <button class="quiz-close-btn" id="closeQuizBtn3">×</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
