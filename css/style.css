@@ -666,7 +666,7 @@ a:hover {
 ============================================== */
 .benefits-section {
     padding: var(--spacing-lg) 0;
-    background-color: var(--color-white);
+    background-color: #cec4b8;
     margin-bottom: 0;
 }
 
@@ -934,7 +934,7 @@ a:hover {
 ============================================== */
 .case-study-section {
     padding: 3rem 0;
-    background-color: var(--color-white);
+    background-color: #cec4b8;
 }
 
 .case-cta-box {
@@ -1156,7 +1156,7 @@ a:hover {
 ============================================== */
 .brochure-preview-section {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-white);
+    background-color: #cec4b8;
 }
 
 .brochure-preview-section .section-lead {
@@ -1710,7 +1710,7 @@ a:hover {
     }
 
     .section-title {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
         letter-spacing: 0.05em;
     }
 
@@ -1738,6 +1738,11 @@ a:hover {
     .cta-button {
         padding: 1.2rem 2rem;
         font-size: 0.85rem;
+    }
+
+    .cta-button.primary.large {
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
     }
 
     .scroll-indicator {
@@ -1826,8 +1831,8 @@ a:hover {
     }
 
     .empathy-cta-button {
-        padding: 1rem 3rem;
-        font-size: 1rem;
+        padding: 1rem 2rem;
+        font-size: 0.875rem;
     }
 
     .benefits-cta-section,
@@ -1875,7 +1880,7 @@ a:hover {
     }
 
     .emotional-title {
-        font-size: 2rem;
+        font-size: 1.375rem;
     }
 
     .emotional-body p {
