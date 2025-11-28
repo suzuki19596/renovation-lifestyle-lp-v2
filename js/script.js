@@ -241,27 +241,39 @@ window.addEventListener('load', () => {
 // 心理テスト（エゴグラム診断）
 // ==============================================
 const quizModule = (() => {
-    // 質問データ（エゴグラムの5つの自我状態に対応）
+    // 質問データ（3段階構成：性格→ライフスタイル→住まい）
     // CP: 厳格な親, NP: 養育的な親, A: 成人, FC: 自由な子供, AC: 順応した子供
-    const allQuestions = [
-        { text: "大笑いすることがある", type: "FC" },
-        { text: "自分は好奇心旺盛なタイプだと思う", type: "FC" },
-        { text: "後輩や子どもには厳しく接するべきだと思う", type: "CP" },
-        { text: "出先で体調が悪いときは、無理せず早く帰る", type: "FC" },
-        { text: "お世話になった人に、よくお返しをする", type: "NP" },
-        { text: "計画を立てるのが早いほうだ", type: "A" },
-        { text: "相手の期待に応えようとする自分がいる", type: "AC" },
-        { text: "人前では自分を出せないタイプだ", type: "AC" },
-        { text: "目標は達成しなければ意味はないと思う", type: "CP" },
-        { text: "他人が成長していくのを見ると嬉しい", type: "NP" },
-        { text: "今まで「遠慮して損をしてきた」と思うことが多い", type: "AC" },
-        { text: "トラブルが発生しても、冷静に対処する自信がある", type: "A" },
-        { text: "人前で大笑いしたり、泣いたりするなど、感情を表に出せない", type: "AC" },
-        { text: "根拠のないことは信じないし、事実に基づいて決めるようにしている", type: "A" },
-        { text: "人を思いやる気持ちは強いほうだ", type: "NP" },
-        { text: "「言い過ぎたかな」と後悔することがよくある", type: "CP" },
-        { text: "自分が感動した番組や映画の話をよくする", type: "FC" },
-        { text: "ノリがよく、ハメを外すこともある", type: "FC" }
+
+    // Phase1: 性格に関する質問（Q1-3から3問）
+    const phase1Questions = [
+        { text: "好奇心旺盛で、新しいことに挑戦するのが好きだ", type: "FC" },
+        { text: "物事は計画を立ててから進めるタイプだ", type: "A" },
+        { text: "周りの人を気遣い、サポートすることが多い", type: "NP" },
+        { text: "目標を決めたら、最後までやり遂げたい", type: "CP" },
+        { text: "周囲の空気を読んで行動することが多い", type: "AC" },
+        { text: "感動したことは誰かに話したくなる", type: "FC" }
+    ];
+
+    // Phase2: ライフスタイルに関する質問（Q4-5から2問）
+    const phase2Questions = [
+        { text: "休日は家でゆっくり過ごすより外出したい", type: "FC" },
+        { text: "友人を家に招くことが好きだ", type: "NP" },
+        { text: "仕事とプライベートはきっちり分けたい", type: "A" },
+        { text: "自分だけの趣味の時間を大切にしている", type: "FC" },
+        { text: "家では誰にも邪魔されずリラックスしたい", type: "AC" },
+        { text: "生活空間は常に整理整頓されていないと落ち着かない", type: "CP" }
+    ];
+
+    // Phase3: 住まいに関する質問（Q6-8から3問）
+    const phase3Questions = [
+        { text: "部屋のインテリアには自分のこだわりを反映させたい", type: "FC" },
+        { text: "機能性よりもデザイン性を重視したい", type: "FC" },
+        { text: "シンプルで無駄のない空間が好きだ", type: "A" },
+        { text: "温かみのある、居心地の良い空間に憧れる", type: "NP" },
+        { text: "他の人とは違う、個性的な部屋に住みたい", type: "FC" },
+        { text: "落ち着いた色合いの空間が好きだ", type: "AC" },
+        { text: "収納がしっかりあって、すっきり暮らせる部屋がいい", type: "A" },
+        { text: "SNSで見るようなおしゃれな部屋に憧れる", type: "FC" }
     ];
 
     // パーソナリティタイプと対応する部屋
@@ -318,10 +330,17 @@ const quizModule = (() => {
     let scores = { CP: 0, NP: 0, A: 0, FC: 0, AC: 0 };
     let quizShown = false;
 
-    // ランダムに8問選択
+    // 各フェーズからランダムに選択して8問構成
     function selectRandomQuestions() {
-        const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, 8);
+        const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+        // Phase1から3問、Phase2から2問、Phase3から3問を選択
+        const selected1 = shuffle(phase1Questions).slice(0, 3);
+        const selected2 = shuffle(phase2Questions).slice(0, 2);
+        const selected3 = shuffle(phase3Questions).slice(0, 3);
+
+        // 順番通りに結合（性格→ライフスタイル→住まい）
+        return [...selected1, ...selected2, ...selected3];
     }
 
     // スコア計算
