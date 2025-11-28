@@ -419,6 +419,13 @@ const quizModule = (() => {
         const question = currentQuestions[currentQuestionIndex];
         questionText.textContent = question.text;
         currentQuestionNum.textContent = currentQuestionIndex + 1;
+
+        // プログレスバーを更新
+        const progressFill = document.getElementById('progressFill');
+        if (progressFill) {
+            const progress = ((currentQuestionIndex + 1) / 8) * 100;
+            progressFill.style.width = `${progress}%`;
+        }
     }
 
     // 回答処理
