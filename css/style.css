@@ -2458,40 +2458,156 @@ a:hover {
 @media (max-width: 480px) {
     .quiz-container {
         max-width: 100%;
+        padding: 0 0.5rem;
     }
 
-    .quiz-start,
-    .quiz-question,
-    .quiz-result {
-        padding: 1.5rem;
+    /* スタート画面 */
+    .quiz-start {
+        padding: 2rem 1.5rem !important;
         border-radius: 15px;
     }
 
+    .quiz-start::after {
+        width: 150px;
+        height: 180px;
+        opacity: 0.4;
+    }
+
     .quiz-title {
-        font-size: 2rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
     }
 
     .mascot {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
     }
 
-    .quiz-answers {
-        gap: 0.5rem;
+    .quiz-start p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
     }
 
-    .quiz-answer-btn {
-        padding: 0.75rem 0.25rem;
+    .quiz-start-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
     }
 
-    .answer-icon {
-        font-size: 1.25rem;
+    /* 質問画面 */
+    .quiz-question {
+        padding: 1.2rem 1.5rem 1.5rem !important;
+        border-radius: 15px;
     }
 
-    .answer-text {
+    .quiz-illustration-bg {
+        width: 120px;
+        height: 150px;
+        top: 60%;
+        opacity: 0.8;
+    }
+
+    .quiz-question .quiz-question-header {
+        margin-bottom: 0.2rem;
+    }
+
+    .quiz-question-header span {
         font-size: 0.7rem;
     }
 
+    .quiz-question .quiz-question-text {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .quiz-question .quiz-answers {
+        gap: 0.3rem;
+    }
+
+    .quiz-question .quiz-answer-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .quiz-answers {
+        gap: 0.4rem;
+    }
+
+    .quiz-answer-btn {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .answer-icon {
+        font-size: 1.1rem;
+    }
+
+    .answer-text {
+        font-size: 0.65rem;
+    }
+
+    /* 結果画面 */
+    .quiz-result {
+        padding: 2rem 1.5rem 1.5rem !important;
+        border-radius: 15px;
+    }
+
+    .quiz-result-header {
+        margin-bottom: 0.5rem;
+    }
+
+    .result-badge {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.6rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .result-type {
+        font-size: 0.85rem;
+    }
+
+    .result-room {
+        margin-bottom: 0.5rem;
+    }
+
     .result-room-image img {
-        height: 150px;
+        height: 100px;
+    }
+
+    .result-room-info {
+        padding: 0.4rem 0.6rem;
+    }
+
+    .result-room-info h4 {
+        font-size: 0.7rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .result-room-info p {
+        font-size: 0.6rem;
+        line-height: 1.3;
+    }
+
+    .result-type-desc {
+        font-size: 0.6rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+
+    .quiz-result-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .quiz-result-btn span {
+        font-size: 0.6rem;
+    }
+
+    .quiz-close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+        width: 25px;
+        height: 25px;
     }
 }
