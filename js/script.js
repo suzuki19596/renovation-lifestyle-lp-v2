@@ -244,36 +244,46 @@ const quizModule = (() => {
     // 質問データ（3段階構成：性格→ライフスタイル→住まい）
     // CP: 厳格な親, NP: 養育的な親, A: 成人, FC: 自由な子供, AC: 順応した子供
 
-    // Phase1: 性格に関する質問（Q1-3から3問）
+    // Phase1: 性格に関する質問（Q1-3から3問）- 各タイプ2問ずつ
     const phase1Questions = [
         { text: "好奇心旺盛で、新しいことに挑戦するのが好きだ", type: "FC" },
+        { text: "感動したことは誰かに話したくなる", type: "FC" },
         { text: "物事は計画を立ててから進めるタイプだ", type: "A" },
+        { text: "論理的に考えて行動することが多い", type: "A" },
         { text: "周りの人を気遣い、サポートすることが多い", type: "NP" },
+        { text: "人の相談に乗ることが多い", type: "NP" },
         { text: "目標を決めたら、最後までやり遂げたい", type: "CP" },
+        { text: "自分なりのルールや信念を大切にしている", type: "CP" },
         { text: "周囲の空気を読んで行動することが多い", type: "AC" },
-        { text: "感動したことは誰かに話したくなる", type: "FC" }
+        { text: "人と違う意見を言うのは苦手だ", type: "AC" }
     ];
 
-    // Phase2: ライフスタイルに関する質問（Q4-5から2問）
+    // Phase2: ライフスタイルに関する質問（Q4-5から2問）- 各タイプ2問ずつ
     const phase2Questions = [
         { text: "休日は家でゆっくり過ごすより外出したい", type: "FC" },
-        { text: "友人を家に招くことが好きだ", type: "NP" },
-        { text: "仕事とプライベートはきっちり分けたい", type: "A" },
         { text: "自分だけの趣味の時間を大切にしている", type: "FC" },
+        { text: "仕事とプライベートはきっちり分けたい", type: "A" },
+        { text: "効率的に家事を済ませたい", type: "A" },
+        { text: "友人を家に招くことが好きだ", type: "NP" },
+        { text: "家族と過ごす時間を大切にしている", type: "NP" },
+        { text: "生活空間は常に整理整頓されていないと落ち着かない", type: "CP" },
+        { text: "自分で決めたルーティンを守ることが多い", type: "CP" },
         { text: "家では誰にも邪魔されずリラックスしたい", type: "AC" },
-        { text: "生活空間は常に整理整頓されていないと落ち着かない", type: "CP" }
+        { text: "一人で静かに過ごす時間が好きだ", type: "AC" }
     ];
 
-    // Phase3: 住まいに関する質問（Q6-8から3問）
+    // Phase3: 住まいに関する質問（Q6-8から3問）- 各タイプ2問ずつ
     const phase3Questions = [
         { text: "部屋のインテリアには自分のこだわりを反映させたい", type: "FC" },
-        { text: "機能性よりもデザイン性を重視したい", type: "FC" },
-        { text: "シンプルで無駄のない空間が好きだ", type: "A" },
-        { text: "温かみのある、居心地の良い空間に憧れる", type: "NP" },
         { text: "他の人とは違う、個性的な部屋に住みたい", type: "FC" },
-        { text: "落ち着いた色合いの空間が好きだ", type: "AC" },
+        { text: "シンプルで無駄のない空間が好きだ", type: "A" },
         { text: "収納がしっかりあって、すっきり暮らせる部屋がいい", type: "A" },
-        { text: "SNSで見るようなおしゃれな部屋に憧れる", type: "FC" }
+        { text: "温かみのある、居心地の良い空間に憧れる", type: "NP" },
+        { text: "家族や友人が集まりやすい部屋にしたい", type: "NP" },
+        { text: "落ち着いた色合いの空間が好きだ", type: "AC" },
+        { text: "周りと調和する、落ち着いた雰囲気の部屋がいい", type: "AC" },
+        { text: "高品質で長く使える素材や家具を選びたい", type: "CP" },
+        { text: "掃除がしやすく、清潔感を保てる部屋がいい", type: "CP" }
     ];
 
     // パーソナリティタイプと対応する部屋
@@ -425,6 +435,13 @@ const quizModule = (() => {
         if (progressFill) {
             const progress = ((currentQuestionIndex + 1) / 8) * 100;
             progressFill.style.width = `${progress}%`;
+        }
+
+        // ランダムにイラストを変更
+        const quizIllustration = document.getElementById('quizIllustration');
+        if (quizIllustration) {
+            const randomNum = Math.floor(Math.random() * 7) + 1;
+            quizIllustration.style.backgroundImage = `url('images/psychological test/illustration${randomNum}.png')`;
         }
     }
 

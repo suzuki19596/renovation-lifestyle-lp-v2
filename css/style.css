@@ -2070,11 +2070,91 @@ a:hover {
 .quiz-question,
 .quiz-result {
     background: #fff;
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    padding: 6rem 6rem 5rem;
     text-align: center;
     position: relative;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-start::before,
+.quiz-question::before,
+.quiz-result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/psychological test/frame.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.quiz-start::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 260px;
+    background-image: url('../images/psychological test/illustration1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 質問画面：枠サイズ固定、中身のみ調整 */
+.quiz-question {
+    padding: 1.5rem 5.5rem 2.5rem;
+    overflow: hidden;
+}
+
+.quiz-question .quiz-question-header {
+    margin-bottom: 0.3rem;
+}
+
+.quiz-question .quiz-question-text {
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.quiz-question .quiz-answers {
+    gap: 0.4rem;
+}
+
+.quiz-question .quiz-answer-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.quiz-illustration-bg {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.quiz-start > *,
+.quiz-question > *,
+.quiz-result > * {
+    position: relative;
+    z-index: 3;
 }
 
 .quiz-close-btn {
@@ -2127,17 +2207,17 @@ a:hover {
 }
 
 .quiz-intro {
-    background: linear-gradient(135deg, #f9f7f5, #f5f2ef);
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid #ebe7e3;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    border: none;
 }
 
 .quiz-intro p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .quiz-start-btn {
@@ -2193,12 +2273,12 @@ a:hover {
 }
 
 .quiz-question-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
-    line-height: 1.7;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     font-weight: 500;
-    padding: 0 0.5rem;
+    padding: 0;
 }
 
 .quiz-answers {
@@ -2289,79 +2369,83 @@ a:hover {
 }
 
 /* 結果画面 */
+.quiz-result {
+    padding: 4.5rem 5rem 4rem !important;
+}
+
 .quiz-result-header {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .result-badge {
     display: inline-block;
     background: var(--color-orange);
     color: #fff;
-    padding: 0.3rem 1rem;
+    padding: 0.25rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
 }
 
 .result-type {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: #333;
     font-weight: 600;
 }
 
 .result-room {
     background: #f8f6f4;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .result-room-image img {
     width: 100%;
-    height: 160px;
+    height: 120px;
     object-fit: cover;
 }
 
 .result-room-info {
-    padding: 1rem;
+    padding: 0.6rem 0.8rem;
     text-align: left;
 }
 
 .result-room-info h4 {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: #333;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
 }
 
 .result-room-info p {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .result-type-desc {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-    padding: 0 0.25rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    padding: 0;
 }
 
 .quiz-result-btn {
     background: var(--color-orange);
     color: #fff;
     border: none;
-    padding: 0.9rem 2rem;
-    font-size: 0.95rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .quiz-result-btn span {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     opacity: 0.9;
 }
 
