@@ -2548,59 +2548,61 @@ a:hover {
 
     /* 結果画面 */
     .quiz-result {
-        padding: 2rem 3rem 1.5rem !important;
+        padding: 1.8rem 3.5rem 1.5rem !important;
         border-radius: 15px;
+        overflow: hidden;
     }
 
     .quiz-result-header {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.3rem;
     }
 
     .result-badge {
-        padding: 0.15rem 0.5rem;
-        font-size: 0.55rem;
-        margin-bottom: 0.2rem;
+        padding: 0.12rem 0.4rem;
+        font-size: 0.5rem;
+        margin-bottom: 0.15rem;
     }
 
     .result-type {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        word-break: keep-all;
     }
 
     .result-room {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.3rem;
     }
 
     .result-room-image img {
-        height: 80px;
+        height: 70px;
     }
 
     .result-room-info {
-        padding: 0.3rem 0.5rem;
+        padding: 0.25rem 0.4rem;
     }
 
     .result-room-info h4 {
-        font-size: 0.6rem;
-        margin-bottom: 0.1rem;
+        font-size: 0.55rem;
+        margin-bottom: 0.08rem;
     }
 
     .result-room-info p {
-        font-size: 0.55rem;
-        line-height: 1.3;
+        font-size: 0.5rem;
+        line-height: 1.25;
     }
 
     .result-type-desc {
-        font-size: 0.55rem;
-        line-height: 1.3;
-        margin-bottom: 0.4rem;
+        font-size: 0.5rem;
+        line-height: 1.25;
+        margin-bottom: 0.3rem;
     }
 
     .quiz-result-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.65rem;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.6rem;
     }
 
     .quiz-result-btn span {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
     }
 
     .quiz-close-btn {
