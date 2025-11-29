@@ -2070,27 +2070,19 @@ a:hover {
 .quiz-question,
 .quiz-result {
     background: #fff;
-    border-radius: 8px;
-    padding: 6rem 6rem 5rem;
+    border-radius: 12px;
+    padding: 3rem 4rem;
     text-align: center;
     position: relative;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+    border: 3px solid #c9a86c;
 }
 
+/* フレーム画像は使用しない（シンプルな枠線に統一）*/
 .quiz-start::before,
 .quiz-question::before,
 .quiz-result::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../images/psychological test/frame.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 2;
+    display: none;
 }
 
 .quiz-start::after {
@@ -2110,9 +2102,9 @@ a:hover {
     z-index: 1;
 }
 
-/* 質問画面：枠サイズ固定、中身のみ調整 */
+/* 質問画面 */
 .quiz-question {
-    padding: 1.5rem 5.5rem 2.5rem;
+    padding: 2rem 3rem;
     overflow: hidden;
 }
 
@@ -2459,20 +2451,6 @@ a:hover {
     .quiz-container {
         max-width: 100%;
         padding: 0 0.5rem;
-    }
-
-    /* モバイルではフレーム画像を非表示にし、シンプルな枠線に */
-    .quiz-start::before,
-    .quiz-question::before,
-    .quiz-result::before {
-        display: none !important;
-    }
-
-    .quiz-start,
-    .quiz-question,
-    .quiz-result {
-        border: 3px solid #c9a86c !important;
-        border-radius: 12px !important;
     }
 
     /* スタート画面 */
