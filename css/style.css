@@ -1778,13 +1778,13 @@ a:hover {
     }
 
     .empathy-intro .emphasis {
-        font-size: 1.375rem;
+        font-size: 1.1rem;
         padding: 1rem 1.5rem;
         margin-top: 2rem;
     }
 
     .benefit-content h3 {
-        font-size: 1.75rem;
+        font-size: 1.4rem;
         margin-bottom: 1rem;
     }
 
@@ -1841,7 +1841,7 @@ a:hover {
     }
 
     .benefits-cta-text {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .cta-annotation-top,
@@ -1865,7 +1865,7 @@ a:hover {
     }
 
     .before-after-content p {
-        font-size: 1.125rem;
+        font-size: 1rem;
         line-height: 1.9;
         letter-spacing: 0.02em;
     }
@@ -1894,6 +1894,10 @@ a:hover {
     .case-cost {
         font-size: 1rem;
         padding: 0.5rem 1rem;
+    }
+
+    .voice-section .section-title {
+        font-size: 1.25rem;
     }
 
     .voice-quote {
